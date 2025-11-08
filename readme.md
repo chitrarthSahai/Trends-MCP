@@ -112,6 +112,24 @@ To run the server locally:
 ```bash
 fastmcp run server.py
 ```
+🧪 Run Remote
+To run the server as a streamable-http service:
+
+Pre-configured dockerfile to push to ACR. Revamp as per your need/registry
+
+```bash
+# Login to ACR. Or do docker login
+az acr login --name <container_registry>
+      
+# Build the Docker image
+docker build -t <registry_url>/trends-mcp:latest .
+
+# Push the image to ACR
+docker push <registry_url>/trends-mcp:latest
+```
+
+Deploy to container app or any other containerized runtime.
+
 ## 📎 Notes
 YouTube comment extraction uses unofficial scraping and may break with YouTube changes.
 
